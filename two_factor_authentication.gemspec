@@ -27,7 +27,6 @@ Gem::Specification.new do |s|
 
   s.add_runtime_dependency 'rails', '>= 3.1.1'
   s.add_runtime_dependency 'devise'
-  s.add_runtime_dependency 'randexp'
   s.add_runtime_dependency 'rotp', '>= 4.0.0'
   s.add_runtime_dependency 'encryptor'
 
