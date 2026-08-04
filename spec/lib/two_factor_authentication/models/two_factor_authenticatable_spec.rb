@@ -137,8 +137,10 @@ describe Devise::Models::TwoFactorAuthenticatable do
         end
 
         it "returns uri with user's email" do
+          # rotp percent-encodes the label, as the Key URI Format requires: the
+          # label is a path segment, so a bare "@" is not valid there.
           expect(instance.provisioning_uri).
-            to match(%r{otpauth://totp/houdini@example.com\?secret=\w{32}})
+            to match(%r{otpauth://totp/houdini%40example\.com\?secret=\w{32}})
         end
 
         it 'returns uri with issuer option' do

@@ -33,7 +33,8 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'bundler'
   s.add_development_dependency 'rake'
   s.add_development_dependency 'rspec-rails', '>= 3.0.1'
-  s.add_development_dependency 'capybara', '~> 2.5'
+  # Capybara 2.x calls Proc.new without a block, which Ruby 3.0 removed.
+  s.add_development_dependency 'capybara', '>= 3.0'
   s.add_development_dependency 'pry'
   s.add_development_dependency 'timecop'
 end
