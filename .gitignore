@@ -21,3 +21,4 @@ dump.rdb
 .rbenv-version
 .ruby-gemset
 .ruby-version
+test-reports

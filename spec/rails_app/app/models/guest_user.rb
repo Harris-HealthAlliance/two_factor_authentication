@@ -7,7 +7,9 @@ class GuestUser
   attr_accessor :direct_otp, :direct_otp_sent_at, :otp_secret_key, :email,
     :second_factor_attempts_count, :totp_timestamp
 
-  def update_attributes(attrs)
+  # The module calls `update`. This double still implemented the older
+  # `update_attributes`, which Rails removed in 6.1.
+  def update(attrs)
     attrs.each do |key, value|
       send(key.to_s + '=', value)
     end
